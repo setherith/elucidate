@@ -64,6 +64,7 @@ public class Elucidate {
         
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         app.setSize(defaultSize);
+        app.setResizable(false);
         app.setLocationRelativeTo(null);
         
         JScrollPane scrollPane = new JScrollPane();
