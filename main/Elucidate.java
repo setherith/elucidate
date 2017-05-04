@@ -1,7 +1,5 @@
 package main;
 
-import format.ColouredString;
-import format.Margin;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -9,9 +7,14 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
+import format.ColouredString;
+import format.Margin;
 
 public class Elucidate {
 
@@ -34,6 +37,7 @@ public class Elucidate {
     public Elucidate() {
         
     	String path = this.getClass().getClassLoader().getResource("./examples/test_file").getPath();
+    	String logo = this.getClass().getClassLoader().getResource("./main/logo.png").getPath();
     	
         String[] lines = IO.LoadFromFile(path);
         
@@ -65,6 +69,7 @@ public class Elucidate {
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         app.setSize(defaultSize);
         app.setResizable(false);
+        app.setIconImage(new ImageIcon(logo).getImage());
         app.setLocationRelativeTo(null);
         
         JScrollPane scrollPane = new JScrollPane();
