@@ -73,8 +73,7 @@ public class Elucidate {
                       
             @Override
             public void paint(Graphics g) {
-                getPanelSize(g, lines);
-                setPreferredSize(new Dimension(1200, 1200));
+                setPreferredSize(getPanelSize(g, lines));
                 super.paint(g);
                 g.setFont(new Font("Courier New", Font.PLAIN, 12));
                 g.setColor(Color.white);
