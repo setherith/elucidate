@@ -117,8 +117,8 @@ public class Elucidate {
                 }
                 
                 // text highlighting?!
-                g.setColor(new Color(1, 0, 0, 0.25f));
-                g.fillRect(30, 30, 30, 30);
+                //g.setColor(new Color(1, 0, 0, 0.25f));
+                //g.fillRect(30, 30, 30, 30);
             }
         };
         
