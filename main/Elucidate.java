@@ -5,11 +5,16 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -128,8 +133,29 @@ public class Elucidate {
             }
         };
         
-        scrollPane.setViewportView(result);
+        JMenuBar menu = new JMenuBar();
+        menu.setSize((int) defaultSize.getWidth(), 30);
+        JMenu file = new JMenu();
+        file.setText("File");
+        menu.add(file);
+        
+        JMenuItem exit = new JMenuItem();
+        exit.setText("Exit...");
+        exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+        
+        file.add(exit);
+        app.add(menu);
+        
+        
         app.add(scrollPane);
+        scrollPane.setViewportView(result);
+        
+        
+        
         app.setVisible(true);
     }
     
