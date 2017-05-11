@@ -8,9 +8,11 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
+import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -138,6 +140,21 @@ public class Elucidate {
         JMenu file = new JMenu();
         file.setText("File");
         menu.add(file);
+        
+        JMenuItem open = new JMenuItem();
+        open.setText("Open...");
+        open.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JFileChooser fileDiag = new JFileChooser("Open..");
+				fileDiag.setMultiSelectionEnabled(false);
+				fileDiag.showOpenDialog(null);
+				File openme = fileDiag.getSelectedFile();
+				if (openme != null) {
+					System.out.println(openme.getAbsolutePath());
+				}
+			}
+		});
+        file.add(open);
         
         JMenuItem exit = new JMenuItem();
         exit.setText("Exit...");
